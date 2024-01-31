@@ -5,9 +5,17 @@ import Image from 'next/image'
 
 interface ServiceItemProps {
   service: Service
+  isAuthenticated: boolean
 }
 
-export function ServiceItem({ service }: ServiceItemProps) {
+export function ServiceItem({ service, isAuthenticated }: ServiceItemProps) {
+  const handleBookingClick = () => {
+    if (!isAuthenticated) {
+      return signIn('google')
+    }
+
+    // TODO: abrir modal de agendamento
+  }
   return (
     <Card>
       <CardContent className="w-full p-3">
@@ -33,7 +41,9 @@ export function ServiceItem({ service }: ServiceItemProps) {
                   currency: 'BRL',
                 }).format(Number(service.price))}
               </p>
-              <Button variant="secondary">Reservar</Button>
+              <Button variant="secondary" onClick={handleBookingClick}>
+                Reservar
+              </Button>
             </div>
           </div>
         </div>
