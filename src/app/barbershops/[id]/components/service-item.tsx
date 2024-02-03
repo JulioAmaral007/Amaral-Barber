@@ -1,3 +1,5 @@
+'use client'
+
 import { Button } from '@/components/ui/button'
 import { Calendar } from '@/components/ui/calendar'
 import { Card, CardContent } from '@/components/ui/card'
@@ -29,7 +31,11 @@ interface ServiceItemProps {
   isAuthenticated: boolean
 }
 
-export function ServiceItem({ service, isAuthenticated }: ServiceItemProps) {
+export function ServiceItem({
+  service,
+  barbershop,
+  isAuthenticated,
+}: ServiceItemProps) {
   const router = useRouter()
   const { data } = useSession()
 
