@@ -1,10 +1,10 @@
 import { Header } from '@/components/header'
+import { authOptions } from '@/lib/auth'
 import { db } from '@/lib/prisma'
 import { format } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 import { getServerSession } from 'next-auth'
 import { BookingItem } from '../../components/booking-item'
-import { authOptions } from '../api/auth/[...nextauth]/route'
 import { BarbershopItem } from './components/barbershop-item'
 import { Search } from './components/search'
 
