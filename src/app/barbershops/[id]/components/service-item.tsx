@@ -24,7 +24,7 @@ import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
 import { getDayBookings } from '../actions/get-day-bookings'
 import { saveBooking } from '../actions/save-booking'
-import {BookingInfo} from "@/components/booking-info";
+import { BookingInfo } from '@/components/booking-info'
 
 interface ServiceItemProps {
   barbershop: Barbershop
@@ -221,14 +221,17 @@ export function ServiceItem({
                   )}
 
                   <div className="border-t border-solid border-secondary px-5 py-6">
-                  <BookingInfo
+                    <BookingInfo
                       booking={{
-                        barbershop: barbershop,
+                        barbershop,
                         date:
                           date && hour
-                            ? setMinutes(setHours(date, Number(hour.split(":")[0])), Number(hour.split(":")[1]))
+                            ? setMinutes(
+                                setHours(date, Number(hour.split(':')[0])),
+                                Number(hour.split(':')[1]),
+                              )
                             : undefined,
-                        service: service,
+                        service,
                       }}
                     />
                   </div>

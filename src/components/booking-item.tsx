@@ -11,6 +11,7 @@ import { Loader2 } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
 import { toast } from 'sonner'
+import { BookingInfo } from './booking-info'
 import {
   AlertDialog,
   AlertDialogAction,
@@ -32,7 +33,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from './ui/sheet'
-import BookingInfo from "./booking-info";
 
 interface BookingItemProps {
   booking: Prisma.BookingGetPayload<{
