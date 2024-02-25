@@ -13,7 +13,7 @@ export function Header() {
     <Card>
       <CardContent className="flex flex-row items-center justify-between p-5">
         <Link href="/">
-          <Image src="/logo.png" alt="FSW Barber" height={18} width={120} />
+          <Image src="/logo.png" alt="Barber" height={18} width={120} />
         </Link>
         <Sheet>
           <SheetTrigger asChild>
