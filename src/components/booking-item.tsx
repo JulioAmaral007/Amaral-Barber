@@ -93,7 +93,15 @@ export function BookingItem({ booking }: BookingItemProps) {
                 })}
               </p>
               <p className="text-2xl">{format(booking.date, 'dd')}</p>
-              <p className="text-sm">{format(booking.date, 'hh:mm')}</p>
+              <time
+                className="text-sm"
+                title={format(booking.date, "dd 'de' MMMM 'ás' hh:mm", {
+                  locale: ptBR,
+                })}
+                dateTime={booking.date.toISOString()}
+              >
+                {format(booking.date, 'hh:mm')}
+              </time>
             </div>
           </CardContent>
         </Card>
